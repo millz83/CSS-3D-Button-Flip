@@ -1,0 +1,64 @@
+body {
+    margin:0;
+    padding:0;
+    background:pink;
+    min-height:100vh;
+}
+
+.wrapper {
+    position: absolute;
+    top:50%;
+    left:40%;
+    transform:translate(-50%,-50%);
+}
+
+.box a {
+    font-size:20px;
+    font-family:'Courier New', Courier, monospace;
+    text-decoration: none;
+    text-transform:uppercase;
+    transform-style:preserve-3d;
+    position: relative;
+    transition: .5s;
+    font-weight:600;
+}
+
+.box a:before {
+    content: attr(title);
+    position: absolute;
+    top:0;
+    left:0;
+    padding:15px 50px;
+    background:rgb(168, 47, 168);
+    color:rgb(247, 173, 234);
+    border:3px solid rgb(108, 10, 117);
+    transition: .5s;
+    transform:translateX(-100%) rotateY(90deg);
+    transform-origin:right;
+
+
+}
+
+
+.box a:after {
+    content:attr(title);
+    position: absolute;
+    top:0;
+    left:0;
+    padding:15px 50px;
+    background:rgb(247, 173, 234);
+    color:rgb(168, 47, 168);
+    border:3px solid rgb(108, 10, 117);
+    transition:.5s;
+    transform:translateX(0) rotateY(0deg);
+    transform-origin:left;
+
+}
+
+.box a:hover:before {
+    transform:translateX(0) rotateY(0deg);
+}
+
+.box a:hover:after {
+    transform:translateX(100%) rotateY(90deg);
+}
